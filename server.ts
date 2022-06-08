@@ -16,7 +16,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // routes
-// ..
+// sample routes
+import publicRoutes from "./app/routes/public.routes";
+publicRoutes(app);
 // ..
 // ..
 

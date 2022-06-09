@@ -12,16 +12,19 @@ const options: CorsOptions = {
 
 // root middleware
 app.use(cors(options));
-app.use(express.urlencoded({ extended: true }));
+// parse requests of content-type - application/json
 app.use(express.json());
+// parse requests of content-type - application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
 
 // routes
-// sample routes
+// sample of moduled routes
 import { publicRoutes } from "./app/routes/public.routes";
 publicRoutes(app);
 // ..
 // ..
 
+// simple route
 app.get("/", (req: Request, res: Response) => {
   res.status(200).send("<h1>Express + TypeScript Server</h1>");
 });
